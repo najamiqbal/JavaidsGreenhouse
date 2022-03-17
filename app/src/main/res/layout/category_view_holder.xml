@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/day_cardview"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="8dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="6dp">
+
+        <ImageView
+            android:id="@+id/c_image"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="#FFF"
+            android:padding="6dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/plant" />
+        <TextView
+            android:id="@+id/category_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:layout_below="@id/c_image"
+            android:fontFamily="@font/tajawal_medium"
+            android:layout_alignParentBottom="true"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:padding="5dp"/>
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

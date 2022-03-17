@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/update_profile"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="10dp"
+    android:orientation="vertical"
+    >
+
+    <EditText
+        android:id="@+id/CurrentPass"
+        android:drawableLeft="@drawable/ic_lock"
+        android:drawablePadding="10dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/edit_text_style"
+        android:layout_marginTop="10dp"
+        android:hint="Current Password"
+        android:padding="10dp"
+        android:singleLine="true"
+        android:inputType="textPassword"
+        android:textColor="#000"
+        android:fontFamily="@font/tajawal_regular"
+        android:textColorHint="@color/hint_text" />
+
+    <EditText
+        android:id="@+id/NewPass"
+        android:drawableLeft="@drawable/ic_lock"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/edit_text_style"
+        android:hint="New Password"
+        android:padding="10dp"
+        android:drawablePadding="10dp"
+        android:singleLine="true"
+        android:layout_marginTop="10dp"
+        android:inputType="textPassword"
+        android:textColor="#000"
+        android:fontFamily="@font/tajawal_regular"
+        android:textColorHint="@color/hint_text" />
+
+    <EditText
+        android:id="@+id/ConfirmPass"
+        android:drawableLeft="@drawable/ic_lock"
+        android:layout_width="fill_parent"
+        android:drawablePadding="10dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/edit_text_style"
+        android:hint="Confirm Password"
+        android:inputType="textPassword"
+        android:padding="10dp"
+        android:fontFamily="@font/tajawal_regular"
+        android:singleLine="true"
+        android:layout_marginTop="10dp"
+        android:textColor="#000"
+        android:textColorHint="@color/hint_text" />
+
+
+    <Button
+        android:id="@+id/btnUpdate"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_style2"
+        android:text="Confirm change"
+        android:fontFamily="@font/tajawal_regular"
+        android:textColor="#fff"
+        android:textSize="20sp"/>
+
+</LinearLayout>

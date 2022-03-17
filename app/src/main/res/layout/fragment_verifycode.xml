@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF">
+
+    <TextView
+        android:id="@+id/resettimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="120dp"
+        android:text="Timer"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/enter_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/resettimer"
+        android:layout_marginTop="10dp"
+        android:text="Enter Verification code"
+        android:textColor="@color/colorPrimary"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/verificationCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/enter_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edit_text_style"
+        android:ems="10"
+        android:hint="Verification Code"
+        android:inputType="number"
+        android:padding="10dp"
+        android:textColorHint="@color/hint_text" />
+
+    <Button
+        android:id="@+id/btn_verify"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/verificationCode"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_style2"
+        android:text="Verify"
+        android:textColor="#FFF"/>
+</RelativeLayout>

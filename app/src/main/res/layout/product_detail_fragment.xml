@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/htab_header"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@drawable/plant"
+        android:fitsSystemWindows="true"
+        android:scaleType="centerCrop" />
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/htab_header"
+        android:background="#F8F8F8"
+        android:isScrollContainer="true"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#fff"
+            android:paddingStart="20dp"
+            android:paddingTop="15dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="15dp">
+
+            <TextView
+                android:id="@+id/txt_product_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/tajawal_medium"
+                android:maxLines="2"
+                android:text="@string/no_thing_found"
+                android:textColor="#2E1A10"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txt_product_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_product_name"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="7dp"
+                android:fontFamily="@font/tajawal_medium"
+                android:text="00PKR"
+                android:textColor="#F8810A"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/l_detaiL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linear"
+        android:layout_marginTop="5dp"
+        android:background="#fff"
+        android:orientation="vertical"
+        android:paddingStart="20dp"
+        android:paddingTop="15dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/tajawal_medium"
+            android:text="@string/item_details"
+            android:textColor="#455154"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txt_item_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:fontFamily="@font/tajawal_regular"
+            android:text="@string/no_thing_found"
+            android:textColor="#2E1A10"
+            android:textSize="12sp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/l_detaiL"
+        android:background="#fff"
+        android:orientation="horizontal"
+        android:paddingTop="10dp">
+
+        <RatingBar
+            android:id="@+id/rating_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:progressTint="@color/golden"
+            android:progressBackgroundTint="@color/hint_text"
+            android:layout_margin="10dp"
+            android:stepSize="0.5" />
+
+
+        <Button
+            android:id="@+id/rating_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rate"
+            android:layout_margin="10dp"
+            android:background="@drawable/button_style2"
+            android:textColor="@color/white"
+            android:fontFamily="@font/tajawal_regular"
+         />
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/linear_counter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btn_add_to_cart"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="25dp"
+        android:background="@drawable/counter_border"
+        android:paddingStart="15dp"
+        android:paddingEnd="10dp">
+
+        <ImageView
+            android:id="@+id/img_plus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
+            android:background="@drawable/ic_rectangle"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_plus_carts" />
+
+        <TextView
+            android:id="@+id/txt_counter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/tajawal_regular"
+            android:text="1"
+            android:textColor="#2E1A10" />
+
+        <ImageView
+            android:id="@+id/img_minus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/ic_minus_carts"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?selectableItemBackgroundBorderless"
+            android:padding="8dp" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_add_to_cart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/button_style2"
+        android:clickable="true"
+        android:drawableStart="@drawable/ic_shopping_cart"
+        android:drawableTint="@color/white"
+        android:focusable="true"
+        android:fontFamily="@font/tajawal_regular"
+        android:foreground="?selectableItemBackgroundBorderless"
+        android:paddingStart="70dp"
+        android:paddingEnd="70dp"
+        android:text="@string/add_to_card"
+        android:textColor="#fff"
+        android:textSize="16sp" />
+
+</RelativeLayout>

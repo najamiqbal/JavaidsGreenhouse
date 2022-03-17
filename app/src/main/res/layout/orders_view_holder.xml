@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+
+        <ImageView
+            android:id="@+id/img_open_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:padding="5dp"
+            android:src="@drawable/ic_arrow_right" />
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/img_order"
+            android:layout_width="95dp"
+            android:layout_height="95dp"
+            android:layout_alignParentStart="true"
+            android:layout_gravity="center"
+            android:src="@drawable/applogo"
+            android:layout_marginEnd="20dp" />
+
+        <TextView
+            android:id="@+id/txt_order_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_toEndOf="@+id/img_order"
+            android:fontFamily="@font/tajawal_regular"
+
+            android:text="@string/no_data"
+            android:textColor="#262628"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+
+
+
+        <TextView
+            android:id="@+id/txt_order_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_order_num"
+            android:layout_toEndOf="@+id/img_order"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/tajawal_regular"
+            android:text="00 RS"
+            android:textColor="#F8810A"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/order_delivery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_order_total"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/img_order"
+            android:drawableStart="@drawable/ic_about"
+            android:drawablePadding="7dp"
+            android:fontFamily="@font/tajawal_regular"
+            android:gravity="center"
+            android:text="Status :"
+            android:textColor="#423A3A"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/txt_order_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignBaseline="@+id/order_delivery"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@+id/order_delivery"
+            android:fontFamily="@font/tajawal_regular"
+            android:text="Pending"
+            android:textColor="#888888"
+            android:textSize="12sp" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/order_delivery"
+            android:layout_marginTop="10dp"
+            android:background="#E1E1E1" />
+
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
