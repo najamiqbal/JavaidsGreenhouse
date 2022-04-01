@@ -128,7 +128,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener{
                     JSONArray jsonArray = new JSONArray(response);
                     for (int i = 0; i < jsonArray.length(); i++) {
                         JSONObject jsonObject = (JSONObject) jsonArray.get(i);
-                        //2 is use for doctor account
+
                         if (jsonObject.getString("status").equals("true")){
 
                             if (jsonObject.getString("user_type").equals("3")) {

@@ -37,7 +37,7 @@ public class ForgetPassFragment extends Fragment
     TextView tv_gologin;
     String t_email="";
     private ProgressDialog pDialog;
-    String Isexist_url = "https://hos-hrm.tk/ecommerce-api/Api.php?action=isUserExist";
+    String Isexist_url = "https://hos-hrm.tk/ecommerce-api/Api.php?action=resetPassword";
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -77,11 +77,12 @@ public class ForgetPassFragment extends Fragment
 
     private void IsUserExist(final String t_email) {
         Log.e("check1122", "mobile number" + t_email);
-        pDialog.setMessage("Registring ...");
+        pDialog.setMessage("Loading ...");
         pDialog.show();
         StringRequest stringRequest=new StringRequest(Request.Method.POST,Isexist_url , new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
+                Log.d("Response is", "CHECK RESPONSE"+response.toString());
                 try {
                     JSONArray jsonArray=new JSONArray(response);
                     for (int i = 0; i < jsonArray.length(); i++) {

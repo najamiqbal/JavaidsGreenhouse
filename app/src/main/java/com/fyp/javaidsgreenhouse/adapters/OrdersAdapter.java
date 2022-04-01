@@ -46,7 +46,12 @@ public class OrdersAdapter extends RecyclerView.Adapter<OrdersAdapter.ViewHolder
         if (model.getOrder_status().equals("0")){
             holder.txt_orderstatus.setText("pending");
         }else if (model.getOrder_status().equals("1")){
-            holder.txt_orderstatus.setText("delivered");
+            holder.txt_orderstatus.setText("Completed");
+        }else if (model.getOrder_status().equals("2")){
+            holder.txt_orderstatus.setText("Cancel");
+        }
+        else if (model.getOrder_status().equals("3")){
+            holder.txt_orderstatus.setText("Delivered");
         }
         holder.img_open_detail.setOnClickListener(view -> {
 

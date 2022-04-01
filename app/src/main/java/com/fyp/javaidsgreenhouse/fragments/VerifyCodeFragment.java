@@ -41,7 +41,7 @@ public class VerifyCodeFragment extends Fragment {
     Handler handler;
     int count = 120;
     String buyer_mobile="",buyer_Name="",buyer_Password="",buyer_Email="",buyer_Address="",verification_code="",user_type="";
-    String registration_url = "https://hos-hrm.com/ecommerce-api/Api.php?action=register";
+    String registration_url = "https://hos-hrm.tk/ecommerce-api/Api.php?action=register";
 
     @Nullable
     @Override
@@ -131,7 +131,6 @@ public class VerifyCodeFragment extends Fragment {
     private void UserRegistration(final String buyer_name, final String buyer_email, final String buyer_mobile, final String buyer_address, final String buyer_password,final String user_type) {
         pDialog.setMessage("Loading....");
         pDialog.show();
-
         StringRequest stringRequest2 = new StringRequest(Request.Method.POST, registration_url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -187,7 +186,5 @@ public class VerifyCodeFragment extends Fragment {
         };
         VolleySentRequest.getInstance().addRequestQueue(stringRequest2);
     }
-
-
 
 }

@@ -136,11 +136,6 @@ public class RegistrationFragment extends Fragment {
                         JSONObject jsonObject = (JSONObject) jsonArray.get(i);
                         if (jsonObject.getString("status").equals("true")) {
                             pDialog.dismiss();
-                            Toast.makeText(getContext(), "Number Already Registered", Toast.LENGTH_SHORT).show();
-
-                        } else {
-                            pDialog.dismiss();
-
                             // also get verification code from response and pass next fragment
 
                             VerifyCodeFragment fragment=new VerifyCodeFragment();
@@ -156,6 +151,10 @@ public class RegistrationFragment extends Fragment {
                             FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                             fragmentTransaction.replace(R.id.fragment_container, fragment);
                             fragmentTransaction.commit();
+
+                        } else {
+                            pDialog.dismiss();
+                            Toast.makeText(getContext(), "Number Already Registered", Toast.LENGTH_SHORT).show();
 
                         }
                     }
