@@ -11,6 +11,21 @@
         android:fitsSystemWindows="true"
         android:scaleType="centerCrop" />
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/htab_header"
+        android:layout_above="@+id/linear_counter">
+
+
+    <LinearLayout
+        android:id="@+id/linearscroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:background="#F8F8F8"
+        android:isScrollContainer="true"
+        android:orientation="vertical">
     <LinearLayout
         android:id="@+id/linear"
         android:layout_width="match_parent"
@@ -124,7 +139,8 @@
 
 
     </LinearLayout>
-
+</LinearLayout>
+    </ScrollView>
     <RelativeLayout
         android:id="@+id/linear_counter"
         android:layout_width="match_parent"

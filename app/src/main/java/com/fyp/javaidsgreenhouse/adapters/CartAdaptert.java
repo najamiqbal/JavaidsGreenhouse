@@ -71,7 +71,7 @@ public class CartAdaptert extends RecyclerView.Adapter<CartAdaptert.ViewHolder> 
         holder.img_minus.setOnClickListener(view -> {
             if (Integer.parseInt(holder.txt_counter.getText().toString())>1){
                 CartDB.UpdateItemCart(model.getProduct_id(),"quantity",Integer.parseInt(holder.txt_counter.getText().toString())-1,context);
-                CartDB.UpdateItemCart(model.getProduct_id(),"sub_total",(Integer.parseInt(holder.txt_counter.getText().toString())+1)*Integer.parseInt(model.getProduct_price()),context);
+                CartDB.UpdateItemCart(model.getProduct_id(),"sub_total",(Integer.parseInt(holder.txt_counter.getText().toString())-1)*Integer.parseInt(model.getProduct_price()),context);
                 ((CartFragment) fragment).GetCartData();
             }else {
                 Toast.makeText(context, "Minimum quantity is 1", Toast.LENGTH_SHORT).show();

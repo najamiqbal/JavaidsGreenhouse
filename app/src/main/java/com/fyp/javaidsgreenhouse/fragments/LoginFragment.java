@@ -100,7 +100,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener{
         t_password = et_pass.getText().toString().trim();
 
         if (t_email.isEmpty()) {
-            et_email.setError("Please Enter Phone");
+            et_email.setError("Please Enter email");
             valid = false;
         } else {
             et_email.setError(null);

@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -40,7 +41,8 @@ public class ProductsListFragment extends Fragment {
     private ProgressDialog pDialog;
     ArrayList<ProductsModel> ItemListProducts = new ArrayList<>();
     RecyclerView recyclerView;
-    String c_id="";
+    String c_id="",c_name="";
+    TextView text_products;
     String productslist_url="https://hos-hrm.tk/ecommerce-api/Api.php?action=getProducts";
     ProductsListAdapter productsListAdapter;
 
@@ -54,6 +56,7 @@ public class ProductsListFragment extends Fragment {
     private void initialization() {
         if (getArguments() != null) {
             c_id = getArguments().getString("categories_id");
+            c_name = getArguments().getString("categories_name");
             Log.d("singin", "LOVE" + c_id);
         } else {
             Toast.makeText(getActivity(), "Basic info not save", Toast.LENGTH_SHORT).show();
@@ -62,6 +65,8 @@ public class ProductsListFragment extends Fragment {
         pDialog = new ProgressDialog(getContext());
         pDialog.setCancelable(false);
         recyclerView = view.findViewById(R.id.re_products);
+        text_products = view.findViewById(R.id.text_products);
+        text_products.setText(c_name);
         GridLayoutManager gridLayoutManager=new GridLayoutManager(getContext(),2);
         recyclerView.setLayoutManager(gridLayoutManager);
 

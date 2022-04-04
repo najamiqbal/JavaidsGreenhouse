@@ -1,15 +1,20 @@
 package com.fyp.javaidsgreenhouse.fragments;
 
+import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
+import android.graphics.drawable.ColorDrawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RatingBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -105,8 +110,35 @@ public class ProductDetailFragment extends Fragment {
             Toast.makeText(getContext(), ""+rating_value, Toast.LENGTH_SHORT).show();
             GiveRatingToProduct(user_id,p_id,rating_value);
         });
+        p_img.setOnClickListener(view1 -> {
+            showImage(p_image);
+        });
     }
 
+
+    public void showImage(String imageUri) {
+        Dialog builder = new Dialog(getContext());
+        builder.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        builder.getWindow().setBackgroundDrawable(
+                new ColorDrawable(android.graphics.Color.TRANSPARENT));
+        builder.setOnDismissListener(new DialogInterface.OnDismissListener() {
+            @Override
+            public void onDismiss(DialogInterface dialogInterface) {
+                //nothing;
+            }
+        });
+
+        ImageView imageView = new ImageView(getContext());
+        //imageView.setImageURI(imageUri);
+        if (imageUri != null) {
+            Glide.with(getContext()).load(imageUri).dontAnimate().fitCenter().placeholder(R.drawable.applogo).into(imageView);
+        }
+        //Picasso.get().load(imageUri).placeholder(R.drawable.logo).into(imageView);
+        builder.addContentView(imageView, new RelativeLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT));
+        builder.show();
+    }
 
     private void GiveRatingToProduct(String user_id, String p_id, String rating_value) {
         pDialog.setMessage("Sending....");

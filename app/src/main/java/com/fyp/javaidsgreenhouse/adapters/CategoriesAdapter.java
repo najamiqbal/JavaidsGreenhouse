@@ -55,6 +55,7 @@ public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.Vi
                 ProductsListFragment fragment=new ProductsListFragment();
                 Bundle args = new Bundle();
                 args.putString("categories_id", mModel.getC_id());
+                args.putString("categories_name", mModel.getName());
                 fragment.setArguments(args);
                 FragmentTransaction fragmentTransaction = manager.beginTransaction();
                 fragmentTransaction.replace(R.id.frag_container, fragment);

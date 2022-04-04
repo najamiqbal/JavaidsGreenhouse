@@ -69,7 +69,7 @@
                         android:layout_marginStart="30dp"
                         android:fontFamily="@font/tajawal_regular"
 
-                        android:text="0 min"
+                        android:text="3 to 5 working days"
                         android:textColor="#686868"
                         android:textSize="12sp" />
                 </LinearLayout>
@@ -148,7 +148,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="17dp"
                         android:fontFamily="@font/tajawal_regular"
-                        android:text="RS 500/-"
+                        android:text="RS 200/-"
                         android:textColor="#686868"
 
                         android:textSize="12sp" />

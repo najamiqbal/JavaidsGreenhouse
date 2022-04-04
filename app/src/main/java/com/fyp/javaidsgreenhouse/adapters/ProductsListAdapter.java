@@ -1,13 +1,18 @@
 package com.fyp.javaidsgreenhouse.adapters;
 
+import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.graphics.drawable.ColorDrawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -110,4 +115,5 @@ public class ProductsListAdapter extends RecyclerView.Adapter<ProductsListAdapte
             btn_addToCart=itemView.findViewById(R.id.btn_request);
         }
     }
+
 }
