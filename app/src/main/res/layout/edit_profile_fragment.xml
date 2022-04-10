@@ -60,7 +60,7 @@
                 android:hint="3354******"
                 android:padding="10dp"
                 android:digits="0123456789+"
-                android:maxLength="10"
+                android:maxLength="11"
                 android:background="@drawable/edit_text_style"
                 android:drawableLeft="@drawable/ic_baseline_call_24"
                 android:drawablePadding="10dp"

@@ -28,6 +28,8 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 public class RegistrationFragment extends Fragment {
@@ -85,6 +87,13 @@ public class RegistrationFragment extends Fragment {
         } else {
             et_name_buyer.setError(null);
         }
+        if (buyer_name.matches("[0-9]+")) {
+            et_name_buyer.setError("Numbers are not allow in name");
+            valid = false;
+        } else {
+            et_name_buyer.setError(null);
+        }
+
         if (buyer_email.isEmpty()) {
             et_email_buyer.setError("Please enter email");
             valid = false;
@@ -97,12 +106,26 @@ public class RegistrationFragment extends Fragment {
         } else {
             et_email_buyer.setError(null);
         }
+        if (!buyer_email.matches(".+@gmail.com")) {
+            et_email_buyer.setError("only gmail.com allows");
+            valid = false;
+        } else {
+            et_email_buyer.setError(null);
+        }
+
         if (buyer_mobile.isEmpty()) {
             et_mobile_buyer.setError("Please enter mobile");
             valid = false;
         } else {
             et_mobile_buyer.setError(null);
         }
+        if (buyer_mobile.length() <12) {
+            et_mobile_buyer.setError("Please enter complete number");
+            valid = false;
+        } else {
+            et_mobile_buyer.setError(null);
+        }
+
         if (buyer_address.isEmpty()) {
             et_address_buyer.setError("Please enter address");
             valid = false;
@@ -117,9 +140,34 @@ public class RegistrationFragment extends Fragment {
             et_password_buyer.setError(null);
             et_confirm_password_buyer.setError(null);
         }
+        if (!isValidPassword(buyer_password)) {
+            et_password_buyer.setError("Password must contain 8 character/numbers and special symbol");
+            et_confirm_password_buyer.setError("Password must contain 8 character/numbers and special symbol");
+            valid = false;
+            Log.d("SignUp","validation");
+
+        } else {
+            et_password_buyer.setError(null);
+            et_confirm_password_buyer.setError(null);
+            Log.d("SignUp","Pass validation");
+        }
 
 
         return valid;
+    }
+
+
+    //*****************************************************************
+    public static boolean isValidPassword(final String password) {
+
+        Pattern pattern;
+        Matcher matcher;
+        final String PASSWORD_PATTERN = "^(?=.*[a-zA-Z])(?=.*\\d)(?=.*[!@#$%^&*()_+])[A-Za-z\\d][A-Za-z\\d!@#$%^&*()_+]{7,19}$";
+        pattern = Pattern.compile(PASSWORD_PATTERN);
+        matcher = pattern.matcher(password);
+
+        return matcher.matches();
+
     }
 
 

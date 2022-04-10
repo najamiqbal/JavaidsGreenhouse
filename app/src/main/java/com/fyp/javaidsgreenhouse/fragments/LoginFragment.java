@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,7 +42,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener{
     TextView forgetpass, registration;
     EditText et_email, et_pass;
     Button btn_login;
-    String t_email, t_password;
+    String t_email="", t_password="";
     String Login_url = "https://hos-hrm.tk/ecommerce-api/Api.php?action=login";
     private ProgressDialog pDialog;
     UserModelClass userModelClass = new UserModelClass();
@@ -102,6 +103,13 @@ public class LoginFragment extends Fragment implements View.OnClickListener{
         if (t_email.isEmpty()) {
             et_email.setError("Please Enter email");
             valid = false;
+            return valid;
+        } else {
+            et_email.setError(null);
+        }
+        if (!t_email.matches(".+@gmail.com")) {
+            et_email.setError("only gmail.com allows");
+            valid = false;
         } else {
             et_email.setError(null);
         }
@@ -152,6 +160,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener{
 
                             }else {
                                 pDialog.dismiss();
+                                Toast.makeText(getContext(), "Not able to login", Toast.LENGTH_SHORT).show();
                             }
 
                         }else {

@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -154,6 +155,12 @@ public class EditProfileFragment extends Fragment {
         } else {
             et_user_name.setError(null);
         }
+        if (userName.matches("[0-9]+")) {
+            et_user_name.setError("Numbers are not allow in name");
+            valid = false;
+        } else {
+            et_user_name.setError(null);
+        }
 
         if (userEmail.isEmpty()) {
             et_email.setError("Please Enter Email");
@@ -161,12 +168,32 @@ public class EditProfileFragment extends Fragment {
         } else {
             et_email.setError(null);
         }
+        if (!Patterns.EMAIL_ADDRESS.matcher(userEmail).matches()) {
+            et_email.setError("Email formate is wrong");
+            valid = false;
+        } else {
+            et_email.setError(null);
+        }
+        if (!userEmail.matches(".+@gmail.com")) {
+            et_email.setError("only gmail.com allows");
+            valid = false;
+        } else {
+            et_email.setError(null);
+        }
+
         if (userMobile.isEmpty()) {
             et_user_mobile.setError("Please Enter Mobile");
             valid = false;
         } else {
             et_user_mobile.setError(null);
         }
+        if (userMobile.length() <11) {
+            et_user_mobile.setError("Please enter complete number");
+            valid = false;
+        } else {
+            et_user_mobile.setError(null);
+        }
+
         if (userAddress.isEmpty()) {
             et_user_address.setError("Please Enter Mobile");
             valid = false;

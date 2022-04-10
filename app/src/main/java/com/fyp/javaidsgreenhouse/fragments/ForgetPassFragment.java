@@ -58,7 +58,12 @@ public class ForgetPassFragment extends Fragment
             public void onClick(View view) {
                 t_email=et_email.getText().toString();
                 if (!t_email.isEmpty()){
-                    IsUserExist(t_email);
+                    if (!t_email.matches(".+@gmail.com")) {
+                        Toast.makeText(getContext(), "please enter Valid gmail", Toast.LENGTH_SHORT).show();
+                    } else {
+                        IsUserExist(t_email);
+                    }
+
 
                 }else {
                     Toast.makeText(getContext(), "Please enter email", Toast.LENGTH_SHORT).show();

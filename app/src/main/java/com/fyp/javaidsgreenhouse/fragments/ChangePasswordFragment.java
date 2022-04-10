@@ -89,7 +89,7 @@ public class ChangePasswordFragment extends Fragment {
             oldPass.setError(null);
         }
         if (!isValidPassword(newPass.getText().toString())) {
-            confirmPass.setError("Password must contain 8 character");
+            confirmPass.setError("Password must contain 8 character/numbers and special symbol");
             valid = false;
             Log.d("SignUp","validation");
         } else {

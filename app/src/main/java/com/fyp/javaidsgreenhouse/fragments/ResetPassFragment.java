@@ -29,6 +29,8 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class ResetPassFragment extends Fragment {
     View view;
@@ -59,12 +61,36 @@ public class ResetPassFragment extends Fragment {
             public void onClick(View v) {
                 if (!NewPass.getText().toString().isEmpty() && !ConfirmPass.getText().toString().isEmpty() && !t_email.isEmpty()){
                     if (NewPass.getText().toString().equals(ConfirmPass.getText().toString())){
-                        updatePass(NewPass.getText().toString().trim(),t_email);
+                        if (isValidPassword(NewPass.getText().toString())){
+                            updatePass(NewPass.getText().toString().trim(),t_email);
+                        }else {
+                            Toast.makeText(getContext(), "Password must contain 8 character/numbers and special symbol", Toast.LENGTH_SHORT).show();
+                        }
+
+                    }else {
+                        Toast.makeText(getContext(), "Password not matched", Toast.LENGTH_SHORT).show();
                     }
+                }else {
+                    Toast.makeText(getContext(), "Please enter password", Toast.LENGTH_SHORT).show();
                 }
+
             }
         });
 
+
+    }
+
+
+    //*****************************************************************
+    public static boolean isValidPassword(final String password) {
+
+        Pattern pattern;
+        Matcher matcher;
+        final String PASSWORD_PATTERN = "^(?=.*[a-zA-Z])(?=.*\\d)(?=.*[!@#$%^&*()_+])[A-Za-z\\d][A-Za-z\\d!@#$%^&*()_+]{7,19}$";
+        pattern = Pattern.compile(PASSWORD_PATTERN);
+        matcher = pattern.matcher(password);
+
+        return matcher.matches();
 
     }
 
