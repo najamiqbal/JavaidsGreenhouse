@@ -73,7 +73,7 @@ public class RegistrationFragment extends Fragment {
         boolean valid = true;
         buyer_name = et_name_buyer.getText().toString();
         buyer_email = et_email_buyer.getText().toString();
-        buyer_mobile = et_mobile_buyer.getText().toString();
+        buyer_mobile = et_mobile_buyer.getText().toString().trim();
         buyer_address = et_address_buyer.getText().toString();
         buyer_password = et_password_buyer.getText().toString();
         buyer_confirm_password = et_confirm_password_buyer.getText().toString();
@@ -119,7 +119,7 @@ public class RegistrationFragment extends Fragment {
         } else {
             et_mobile_buyer.setError(null);
         }
-        if (buyer_mobile.length() <12) {
+        if (buyer_mobile.length() <11) {
             et_mobile_buyer.setError("Please enter complete number");
             valid = false;
         } else {
@@ -151,8 +151,6 @@ public class RegistrationFragment extends Fragment {
             et_confirm_password_buyer.setError(null);
             Log.d("SignUp","Pass validation");
         }
-
-
         return valid;
     }
 
