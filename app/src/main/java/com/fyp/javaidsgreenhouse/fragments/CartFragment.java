@@ -21,6 +21,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.carteasy.v1.lib.Carteasy;
 import com.fyp.javaidsgreenhouse.R;
+import com.fyp.javaidsgreenhouse.activities.MainActivity;
 import com.fyp.javaidsgreenhouse.adapters.CartAdaptert;
 import com.fyp.javaidsgreenhouse.models.ProductsModel;
 import com.fyp.javaidsgreenhouse.models.UserModelClass;
@@ -72,6 +73,7 @@ public class CartFragment extends Fragment {
         rvItems = view.findViewById(R.id.rv_items);
         rvItems.setLayoutManager(layoutManager);
         GetCartData();
+
         check_out.setOnClickListener(view1 -> {
             grand_total=txt_total_price.getText().toString();
             PrePareData();
@@ -233,9 +235,12 @@ public class CartFragment extends Fragment {
                 cartAdaptert = new CartAdaptert(getContext(), ItemListCart, true, CartFragment.this);
                 rvItems.setAdapter(cartAdaptert);
                 Log.d("CART LIST HERE", "");
-                txt_total_price.setText("" + totalprice);
-            }
 
+
+            }
+            totalprice=totalprice+200;
+            txt_total_price.setText("" + totalprice);
+            ((MainActivity)getActivity()).getCartCount();
         } else {
             txt_no_data.setVisibility(View.VISIBLE);
             ItemListCart.clear();

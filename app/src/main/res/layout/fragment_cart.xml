@@ -5,11 +5,24 @@
     android:background="#F8F8F8"
     android:orientation="vertical">
 
+    <TextView
+        android:id="@+id/txt_minimum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/tajawal_medium"
+        android:text="Minimum order limit is Rs 200"
+        android:textColor="#F6785E"
+        android:textSize="11sp"
+        android:textStyle="bold" />
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_items"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_below="@id/txt_minimum"
             android:layout_above="@id/relative_total"/>
 
 
@@ -48,16 +61,26 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/tajawal_regular"
             android:text="@string/sub_total"
-
             android:textColor="#2E1A10"
             android:textSize="17sp" />
 
+        <TextView
+            android:id="@+id/txt_charges"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/total"
+            android:layout_marginTop="1dp"
+            android:fontFamily="@font/tajawal_medium"
+            android:text="Delivery charges: 200"
+            android:textColor="#F35433"
+            android:textSize="11sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/txt_total_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/total"
+            android:layout_below="@+id/txt_charges"
             android:layout_marginTop="3dp"
             android:fontFamily="@font/tajawal_medium"
             android:text=""

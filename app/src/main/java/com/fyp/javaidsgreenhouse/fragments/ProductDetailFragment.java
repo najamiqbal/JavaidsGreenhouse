@@ -192,7 +192,7 @@ public class ProductDetailFragment extends Fragment {
 
     private void Bindata() {
         tv_p_name.setText(p_name);
-        tv_p_price.setText(p_price);
+        tv_p_price.setText("Rs "+p_price);
         tv_p_des.setText(p_des);
         ratingBar.setRating(Float.parseFloat(p_rating));
         Glide.with(getContext()).load(p_image).dontAnimate().fitCenter().placeholder(R.drawable.applogo).into(p_img);

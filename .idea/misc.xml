@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Black Panther/AndroidStudioProjects/JavaidsGreenhouse/app/src/main/res/drawable/badge_view.xml" value="0.37864583333333335" />
         <entry key="..\:/Users/Black Panther/AndroidStudioProjects/JavaidsGreenhouse/app/src/main/res/drawable/button_style2.xml" value="0.3" />
         <entry key="..\:/Users/Black Panther/AndroidStudioProjects/JavaidsGreenhouse/app/src/main/res/drawable/comentboxstyle.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Black Panther/AndroidStudioProjects/JavaidsGreenhouse/app/src/main/res/drawable/edit_text_style.xml" value="0.37864583333333335" />
@@ -35,11 +36,13 @@
         <entry key="..\:/Users/Black Panther/AndroidStudioProjects/JavaidsGreenhouse/app/src/main/res/layout/cart_view_holder.xml" value="0.33" />
         <entry key="..\:/Users/Black Panther/AndroidStudioProjects/JavaidsGreenhouse/app/src/main/res/layout/category_view_holder.xml" value="0.3625" />
         <entry key="..\:/Users/Black Panther/AndroidStudioProjects/JavaidsGreenhouse/app/src/main/res/layout/change_pass_fragment.xml" value="0.3625" />
+        <entry key="..\:/Users/Black Panther/AndroidStudioProjects/JavaidsGreenhouse/app/src/main/res/layout/custom_badge_layout.xml" value="0.3625" />
         <entry key="..\:/Users/Black Panther/AndroidStudioProjects/JavaidsGreenhouse/app/src/main/res/layout/custom_toolbar.xml" value="0.17" />
         <entry key="..\:/Users/Black Panther/AndroidStudioProjects/JavaidsGreenhouse/app/src/main/res/layout/edit_profile_fragment.xml" value="0.3625" />
         <entry key="..\:/Users/Black Panther/AndroidStudioProjects/JavaidsGreenhouse/app/src/main/res/layout/feedback_fragment.xml" value="0.3625" />
+        <entry key="..\:/Users/Black Panther/AndroidStudioProjects/JavaidsGreenhouse/app/src/main/res/layout/feedback_list_viewholder.xml" value="0.3625" />
         <entry key="..\:/Users/Black Panther/AndroidStudioProjects/JavaidsGreenhouse/app/src/main/res/layout/forgetpass_verifycode_fragment.xml" value="0.1762917933130699" />
-        <entry key="..\:/Users/Black Panther/AndroidStudioProjects/JavaidsGreenhouse/app/src/main/res/layout/fragment_cart.xml" value="0.35643115942028986" />
+        <entry key="..\:/Users/Black Panther/AndroidStudioProjects/JavaidsGreenhouse/app/src/main/res/layout/fragment_cart.xml" value="0.33" />
         <entry key="..\:/Users/Black Panther/AndroidStudioProjects/JavaidsGreenhouse/app/src/main/res/layout/fragment_dashboard.xml" value="0.3625" />
         <entry key="..\:/Users/Black Panther/AndroidStudioProjects/JavaidsGreenhouse/app/src/main/res/layout/fragment_forgetpassword.xml" value="0.35643115942028986" />
         <entry key="..\:/Users/Black Panther/AndroidStudioProjects/JavaidsGreenhouse/app/src/main/res/layout/fragment_home.xml" value="0.1762917933130699" />
@@ -50,6 +53,7 @@
         <entry key="..\:/Users/Black Panther/AndroidStudioProjects/JavaidsGreenhouse/app/src/main/res/layout/fragment_store_info.xml" value="0.33" />
         <entry key="..\:/Users/Black Panther/AndroidStudioProjects/JavaidsGreenhouse/app/src/main/res/layout/fragment_verifycode.xml" value="0.35643115942028986" />
         <entry key="..\:/Users/Black Panther/AndroidStudioProjects/JavaidsGreenhouse/app/src/main/res/layout/login_signup_activity.xml" value="0.35643115942028986" />
+        <entry key="..\:/Users/Black Panther/AndroidStudioProjects/JavaidsGreenhouse/app/src/main/res/layout/my_feedbacks_fragment.xml" value="0.3625" />
         <entry key="..\:/Users/Black Panther/AndroidStudioProjects/JavaidsGreenhouse/app/src/main/res/layout/order_items_fragment.xml" value="0.3625" />
         <entry key="..\:/Users/Black Panther/AndroidStudioProjects/JavaidsGreenhouse/app/src/main/res/layout/order_items_view_holder.xml" value="0.3625" />
         <entry key="..\:/Users/Black Panther/AndroidStudioProjects/JavaidsGreenhouse/app/src/main/res/layout/orders_user_fragment.xml" value="0.3625" />

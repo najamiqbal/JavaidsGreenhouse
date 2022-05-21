@@ -25,6 +25,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.fyp.javaidsgreenhouse.R;
+import com.fyp.javaidsgreenhouse.activities.MainActivity;
+import com.fyp.javaidsgreenhouse.fragments.CartFragment;
 import com.fyp.javaidsgreenhouse.fragments.ProductDetailFragment;
 import com.fyp.javaidsgreenhouse.fragments.ProductsListFragment;
 import com.fyp.javaidsgreenhouse.models.CategoryModel;
@@ -55,7 +57,7 @@ public class ProductsListAdapter extends RecyclerView.Adapter<ProductsListAdapte
     public void onBindViewHolder(@NonNull ProductsListAdapter.ViewHolder holder, int position) {
         final ProductsModel pModel=list.get(position);
         holder.tv_name.setText(pModel.getProduct_name());
-        holder.product_price.setText(pModel.getProduct_price());
+        holder.product_price.setText("Rs "+pModel.getProduct_price());
         Glide.with(context).load(pModel.getProduct_image()).dontAnimate().fitCenter().placeholder(R.drawable.applogo).into(holder.c_image);
 
         holder.c_image.setOnClickListener(v -> {
@@ -90,6 +92,7 @@ public class ProductsListAdapter extends RecyclerView.Adapter<ProductsListAdapte
             player.start();
             Toast.makeText(context, "Added to Cart", Toast.LENGTH_SHORT).show();
             CartDB.AddToCart(pModel.getProduct_id(),pModel.getProduct_name(),pModel.getProduct_price(),pModel.getProduct_image(),quantity_plus, String.valueOf(Integer.parseInt(pModel.getProduct_price())*quantity_plus),context);
+            ((MainActivity) context).getCartCount();
 
         });
 

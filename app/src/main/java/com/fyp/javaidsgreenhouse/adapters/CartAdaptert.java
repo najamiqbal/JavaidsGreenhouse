@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.fyp.javaidsgreenhouse.R;
+import com.fyp.javaidsgreenhouse.activities.MainActivity;
 import com.fyp.javaidsgreenhouse.fragments.CartFragment;
 import com.fyp.javaidsgreenhouse.models.ProductsModel;
 import com.fyp.javaidsgreenhouse.utils.CartDB;
@@ -62,6 +63,7 @@ public class CartAdaptert extends RecyclerView.Adapter<CartAdaptert.ViewHolder> 
             Toast.makeText(context, "item removed", Toast.LENGTH_SHORT).show();
             CartDB.RemoveItemFromCart(model.getProduct_id(),context);
             ((CartFragment) fragment).GetCartData();
+            ((MainActivity) context).getCartCount();
         });
         holder.img_plus.setOnClickListener(view -> {
             CartDB.UpdateItemCart(model.getProduct_id(),"quantity",Integer.parseInt(holder.txt_counter.getText().toString())+1,context);

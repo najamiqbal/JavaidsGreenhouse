@@ -23,7 +23,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
         // require a empty public constructor
     }
     View view;
-    TextView txt_user_name,txt_em,txt_mobile,txt_address,edit_profile,change_pass,about_us, logout,invite_frnd,all_orders,txt_pending,txt_shipped,txt_canceled,txt_completed,txt_feedback;
+    TextView txt_user_name,txt_em,txt_mobile,txt_address,edit_profile,change_pass,about_us, logout,invite_frnd,all_orders,txt_pending,txt_shipped,txt_canceled,txt_completed,txt_feedback,txt_my_feedback;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view=inflater.inflate(R.layout.fragment_profile,container,false);
@@ -47,6 +47,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
         txt_mobile=view.findViewById(R.id.txt_mobile);
         txt_address=view.findViewById(R.id.txt_address);
         txt_user_name=view.findViewById(R.id.tv_user_name);
+        txt_my_feedback=view.findViewById(R.id.txt_my_feedback);
 
         edit_profile.setOnClickListener(this);
         txt_feedback.setOnClickListener(this);
@@ -59,6 +60,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
         txt_pending.setOnClickListener(this);
         txt_completed.setOnClickListener(this);
         txt_canceled.setOnClickListener(this);
+        txt_my_feedback.setOnClickListener(this);
 
         BindData();
     }
@@ -142,6 +144,14 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
                 fragmentTransaction4.replace(R.id.frag_container, fragment4);
                 fragmentTransaction4.addToBackStack("forgetpass_fragment");
                 fragmentTransaction4.commit();
+                break;
+
+            case R.id.txt_my_feedback:
+                MyFeedBackFragment fragment5 = new MyFeedBackFragment();
+                FragmentTransaction fragmentTransaction5 = getFragmentManager().beginTransaction();
+                fragmentTransaction5.replace(R.id.frag_container, fragment5);
+                fragmentTransaction5.addToBackStack("forgetpass_fragment");
+                fragmentTransaction5.commit();
                 break;
         }
     }
