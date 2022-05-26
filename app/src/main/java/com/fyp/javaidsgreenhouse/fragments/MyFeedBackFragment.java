@@ -80,7 +80,7 @@ public class MyFeedBackFragment extends Fragment {
 
                         feedbackModel model = new feedbackModel();
 
-                        model.setId(jsonObject.getString("id"));
+                       // model.setId(jsonObject.getString("id"));
                         model.setFeedback(jsonObject.getString("feedback"));
                         ItemList.add(model);
 
